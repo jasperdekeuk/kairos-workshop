@@ -6,7 +6,7 @@ FROM ${BASE_IMAGE} AS base-kairos
 
 # Add your packages here. These are some examples:
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl vim htop git && \
+    apt-get install -y --no-install-recommends curl vim htop git  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -26,4 +26,4 @@ RUN --mount=type=bind,from=kairos-init,src=/kairos-init,dst=/kairos-init \
       --trusted "false" \
       --provider k3s \
       --provider-k3s-version "v1.35.0+k3s1" \
-      --version "v0.0.1"
+      --version "v0.0.2"

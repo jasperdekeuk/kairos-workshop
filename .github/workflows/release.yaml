@@ -1,6 +1,9 @@
 name: Build Kairos Custom Image
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [created]
 
